@@ -6,12 +6,11 @@ tentativas = 1;
 function exibirTextoNaTela(tag, texto){
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
-    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.2} );
-    
+    responsiveVoice.speak(texto, 'Brazilian portuguese female',{rate:1.2} );
 }
 
 function exibirMensagemInicial(){
-    exibirTextoNaTela('h1','Bem vindo ao jogo : Descubra o numero secreto');
+    exibirTextoNaTela('h1','Jogo do numero secreto');
     exibirTextoNaTela('p','Escolha um numero de 1 ao 10'); 
 }
 
@@ -43,7 +42,7 @@ function verificarChute(){
 }
 
 function gerarNumeroAleatorio(){
-    let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
+    let numeroEscolhido = parseInt(Math.random() * 10 + 1);
     let quantidadeDeElementosNaLista = listaDeNumerosSorteados.length;
 
     if(quantidadeDeElementosNaLista == numeroLimite){
@@ -76,7 +75,3 @@ function reiniciarJogo(){
     exibirMensagemInicial();
     document.getElementById('reiniciar').setAttribute('disabled',true)
 }
-
-
-
-
